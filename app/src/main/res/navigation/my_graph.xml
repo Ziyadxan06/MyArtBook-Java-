@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_graph"
+    app:startDestination="@id/recycler_fragment">
+
+    <fragment
+        android:id="@+id/recycler_fragment"
+        android:name="com.ziyad.myartbook.view.recycler_fragment"
+        android:label="recycler_fragment"
+        tools:layout="@layout/recycler_fragment" >
+        <action
+            android:id="@+id/action_recycler_fragment_to_upload_fragment"
+            app:destination="@id/upload_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/upload_fragment"
+        android:name="com.ziyad.myartbook.view.upload_fragment"
+        android:label="fragment_upload"
+        tools:layout="@layout/fragment_upload" >
+        <action
+            android:id="@+id/action_upload_fragment_to_recycler_fragment"
+            app:destination="@id/recycler_fragment" />
+        <argument
+            android:name="artid"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="info"
+            app:argType="string">
+
+        </argument>
+    </fragment>
+</navigation>
